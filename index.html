@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'
+        integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous'>
+    <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Gloria+Hallelujah&family=Handjet&family=Luckiest+Guy&family=Permanent+Marker&family=Pixelify+Sans:wght@600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Wing Destroyer</title>
+</head>
+
+<body>
+
+    <header class="container-fluid">
+        <section class="row justify-content-center p-5">
+            <div class="col-12 col-md-6 text-center">
+                <h1 class="funFont">Wing Destroyer</h1>
+            </div>
+        </section>
+    </header>
+
+    <main class="container-fluid ">
+        <section class="row justify-content-center p-5">
+            <div class="col-12 col-md-6">
+                <img class="img-fluid" role="button" onclick="eatWings()"
+                    src="https://images.gotruckster.com/foodtruck/cover_photos/ghF92VJ1teV5OI9H2Gxg7ylP19QOu7SAyDUHOXQ9.png"
+                    alt="foodTruck">
+            </div>
+        </section>
+        <section class="row justify-content-center">
+            <div class="col-12 col-md-4">
+                <p id="clickUpgrades" class="fs-3 text-light text-center">0 👆</p>
+            </div>
+            <div class="col-12 col-md-4">
+                <h2 class="fs-1 text-light text-center"><span id="wingTotal">0</span>🍗</h2>
+            </div>
+            <div class="col-12 col-md-4">
+                <p id="automaticUpgrades" class="fs-3 text-light text-center">0 ⌛</p>
+            </div>
+        </section>
+
+        <section class="row p-3 justify-content-center">
+            <div class="col-12 col-md-3">
+                <div class="text-light">
+                    <h3>Click Upgrades</h3>
+                    <button onclick="buyRanch()" class="btn btn-success">10 🍗</button>
+                    <p>Ranch +1</p>
+                    <button onclick="buyWater()" class="btn btn-success">50 🍗</button>
+                    <p>Water +5</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3">
+                <div class="text-light">
+                    <h3>Automatic Upgrades</h3>
+                    <button onclick="updateAutoUpgrade()" class="btn btn-danger">100 🍗</button>
+                    <p>Friend +10 / 3s</p>
+                    <button onclick="updateAutoUpgrade()" class="btn btn-danger">500 🍗</button>
+                    <p>Joey Chestnut +100 / 3s</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3">
+                <div class="text-light box">
+                    <h3>Click Stats</h3>
+                    <p>0 Ranchs</p>
+                    <p>0 Forks</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3 box">
+                <div class="text-light">
+                    <h3>Automatic Stats</h3>
+                    <p>0 Friends</p>
+                    <p>0 Joey Chestnuts</p>
+
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="container-fluid"></footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

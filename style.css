@@ -1,0 +1,25 @@
+* {
+    user-select: none;
+}
+
+body {
+    background-image: url(https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80);
+    background-size: cover;
+}
+
+img {
+    border-radius: 60px;
+}
+
+.funFont {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 3em;
+    color: white;
+    text-shadow: 4px 4px 4px solid red;
+
+}
+
+.box {
+    background-color: rgba(254, 123, 0, 0.655);
+    border: 4px solid black;
+}
