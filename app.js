@@ -27,7 +27,7 @@ let automaticUpgrades = [
         multiplier: 10
     },
     {
-        name: 'Joey Chestnut',
+        name: 'Joey',
         price: 1000,
         quantity: 0,
         multiplier: 100
@@ -80,9 +80,7 @@ function buyWater() {
     }
 }
 
-// FIXME you are trying to do two things in one function
-// buy and friend....
-// collection the friends upgrade amount
+
 
 function buyAFriend() {
     const friend = automaticUpgrades.find(autoUpgrade => autoUpgrade.name == 'Friend')
@@ -95,10 +93,10 @@ function buyAFriend() {
 }
 
 function buyJoeyChestnut() {
-    const joeyChestnut = automaticUpgrades.find(autoUpgrade => autoUpgrade.name == 'Joey Chestnut')
-    if (wings >= joeyChestnut.price) {
-        joeyChestnut.quantity++
-        wings -= joeyChestnut
+    const joey = automaticUpgrades.find(autoUpgrade => autoUpgrade.name == 'Joey')
+    if (wings >= joey.price) {
+        joey.quantity++
+        wings -= joey.price
         drawWings()
     }
 }
