@@ -22,13 +22,13 @@ let clickUpgrades = [
 let automaticUpgrades = [
     {
         name: 'Friend',
-        price: 1000,
+        price: 500,
         quantity: 0,
-        multiplier: 100
+        multiplier: 10
     },
     {
         name: 'Joey Chestnut',
-        price: 5000,
+        price: 1000,
         quantity: 0,
         multiplier: 100
     }
@@ -80,15 +80,35 @@ function buyWater() {
     }
 }
 
-function addFriend() {
-    const friend = automaticUpgrades(autoUpgrade => autoUpgrade.name == 'Friend')
+// FIXME you are trying to do two things in one function
+// buy and friend....
+// collection the friends upgrade amount
 
+function buyAFriend() {
+    const friend = automaticUpgrades.find(autoUpgrade => autoUpgrade.name == 'Friend')
+    if (wings >= friend.price) {
+        friend.quantity++
+        wings -= friend.price
+        drawWings()
+    }
+
+}
+
+function buyJoeyChestnut() {
+    const joeyChestnut = automaticUpgrades.find(autoUpgrade => autoUpgrade.name == 'Joey Chestnut')
+    if (wings >= joeyChestnut.price) {
+        joeyChestnut.quantity++
+        wings -= joeyChestnut
+        drawWings()
+    }
+}
+
+function calculateAutoUpgrades() {
     automaticUpgrades.forEach(autoUpgrade => {
-        autoUpgrade.multiplier * autoUpgrade.quantity
-        if (wings >= 100) {
-            friend.quantity++
-            wings -= friend.price
-        }
+        const autoTotal = autoUpgrade.multiplier * autoUpgrade.quantity
+        wings += autoTotal
+
+        // console.log(autoUpgrade.name, 'is eating', autoTotal, 'wings')
     })
     drawWings()
 }
@@ -97,4 +117,4 @@ function addFriend() {
 
 
 
-setInterval(updateAutoUpgrade, 3000);
+setInterval(calculateAutoUpgrades, 3000);
