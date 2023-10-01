@@ -64,22 +64,25 @@ function drawWings() {
 
 function buyRanch() {
     const ranch = clickUpgrades.find(clickUpgrade => clickUpgrade.name == 'Ranch')
-    if (wings >= 10) {
+    if (wings >= ranch.price) {
         ranch.quantity++
         wings -= ranch.price
         drawWings()
         drawRanch()
+        ranch.price *= 2
     }
+
 }
 
 
 function buyWater() {
     const water = clickUpgrades.find(clickUpgrade => clickUpgrade.name == 'Water')
-    if (wings >= 50) {
+    if (wings >= water.price) {
         water.quantity++
         wings -= water.price
         drawWings()
         drawWater()
+        water.price *= 2
     }
 }
 
@@ -92,6 +95,7 @@ function buyAFriend() {
         wings -= friend.price
         drawWings()
         drawFriend()
+        friend.price *= 2
     }
 
 }
@@ -103,6 +107,7 @@ function buyJoeyChestnut() {
         wings -= joey.price
         drawWings()
         drawJoey()
+        joey.price *= 2
     }
 }
 
@@ -150,5 +155,19 @@ function drawJoey() {
     statsElem.innerText = `${joey.quantity} | ${joey.name}`
 }
 
+
+// function upgradeRanch() {
+//     clickUpgrades.forEach(ranch => {
+//         ranch.price++
+
+//     })
+// }
+
+// function restartMonsters(){
+//     monsters.forEach(monster => {
+//       monster.level++
+//       monster.maxHealth = monster.maxHealth * monster.level
+//       monster.health = monster.maxHealth
+//     })
 
 setInterval(calculateAutoUpgrades, 3000);
