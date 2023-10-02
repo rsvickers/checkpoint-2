@@ -62,18 +62,20 @@ function drawWings() {
 }
 
 
+
+
 function buyRanch() {
     const ranch = clickUpgrades.find(clickUpgrade => clickUpgrade.name == 'Ranch')
     if (wings >= ranch.price) {
         ranch.quantity++
         wings -= ranch.price
         drawWings()
-        drawRanch()
         ranch.price *= 2
+        drawRanch()
+        // drawRanchUpgrade()
     }
 
 }
-
 
 function buyWater() {
     const water = clickUpgrades.find(clickUpgrade => clickUpgrade.name == 'Water')
@@ -81,8 +83,8 @@ function buyWater() {
         water.quantity++
         wings -= water.price
         drawWings()
-        drawWater()
         water.price *= 2
+        drawWater()
     }
 }
 
@@ -94,8 +96,8 @@ function buyAFriend() {
         friend.quantity++
         wings -= friend.price
         drawWings()
-        drawFriend()
         friend.price *= 2
+        drawFriend()
     }
 
 }
@@ -106,14 +108,15 @@ function buyJoeyChestnut() {
         joey.quantity++
         wings -= joey.price
         drawWings()
-        drawJoey()
         joey.price *= 2
+        drawJoey()
     }
 }
 
 function calculateAutoUpgrades() {
     automaticUpgrades.forEach(autoUpgrade => {
         const autoTotal = autoUpgrade.multiplier * autoUpgrade.quantity
+        let autoUpgradeElem = document.getElementById
         wings += autoTotal
 
         // console.log(autoUpgrade.name, 'is eating', autoTotal, 'wings')
@@ -123,12 +126,13 @@ function calculateAutoUpgrades() {
 
 
 function drawRanch() {
-    const ranchElem = document.getElementById('Ranch')
-    const statsElem = ranchElem.querySelector('.clickStats')
+    let ranchElem = document.getElementById('Ranch')
+    let statsElem = ranchElem.querySelector('.clickStats')
 
-    const ranch = clickUpgrades.find(clickUpgrade => clickUpgrade.name == 'Ranch')
-    statsElem.innerText = `${ranch.quantity} | ${ranch.name}`
-    drawWings()
+    let ranch = clickUpgrades.find(clickUpgrade => clickUpgrade.name == 'Ranch')
+    statsElem.innerText = `${ranch.quantity} | ${ranch.name} | ${ranch.price}🍗`
+
+
 }
 
 function drawWater() {
@@ -136,7 +140,7 @@ function drawWater() {
     const statsElem = waterElem.querySelector('.clickStats')
 
     const water = clickUpgrades.find(clickUpgrade => clickUpgrade.name == 'Water')
-    statsElem.innerText = `${water.quantity} | ${water.name}`
+    statsElem.innerText = `${water.quantity} | ${water.name} | ${water.price}🍗`
 }
 
 function drawFriend() {
@@ -144,7 +148,7 @@ function drawFriend() {
     const statsElem = friendElem.querySelector('.autoStats')
 
     const friend = automaticUpgrades.find(autoUpgrade => autoUpgrade.name == 'Friend')
-    statsElem.innerText = `${friend.quantity} | ${friend.name}`
+    statsElem.innerText = `${friend.quantity} | ${friend.name} | ${friend.price}🍗`
 }
 
 function drawJoey() {
@@ -152,22 +156,26 @@ function drawJoey() {
     const statsElem = joeyElem.querySelector('.autoStats')
 
     const joey = automaticUpgrades.find(autoUpgrade => autoUpgrade.name == 'Joey Chestnut')
-    statsElem.innerText = `${joey.quantity} | ${joey.name}`
+    statsElem.innerText = `${joey.quantity} | ${joey.name} | ${joey.price}🍗`
 }
 
+function clickUpgradeCount(upgradeName) {
 
-// function upgradeRanch() {
-//     clickUpgrades.forEach(ranch => {
-//         ranch.price++
+    const upgradeCount = clickUpgrades.find(clickUpgrade => clickUpgrade.name == upgradeName)
+    if (upgradeCount)
 
-//     })
-// }
 
-// function restartMonsters(){
-//     monsters.forEach(monster => {
-//       monster.level++
-//       monster.maxHealth = monster.maxHealth * monster.level
-//       monster.health = monster.maxHealth
-//     })
 
+    // // clickUpgrades.forEach(clickUpgrade => {
+    // //     const clickUpgradeCount = clickUpgrade.find(clickUpgrade => clickUpgrade.name == upgradeName)
+    // //     const multiplierTotal = clickUpgrade.multiplier * clickUpgrade.quantity
+    // //     clickUpgradeCount.multiplier += multiplierTotal
+    // //     const statsElem = multiplierTotal.querySelector('.clickUpgrades')
+    // //     statsElem.innerText = `${clickUpgrade.multiplier}`
+    // //     // clickUpgrade.multiplier += clickUpgrade.quantity
+    // //     drawWings()
+    // })
+}
+
+// clickUpgradeCount()
 setInterval(calculateAutoUpgrades, 3000);
