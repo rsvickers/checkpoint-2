@@ -60,6 +60,14 @@ function drawWings() {
     wingTotalElem.innerText = wings
 
 }
+// FIXME I need help with this.
+// function clickUpgradeCount() {
+//     clickUpgrades.forEach(clickUpgrade => {
+//         const clickUpgradeElem = document.getElementById('clickUpgrade')
+//         clickUpgradeElem.innerText = clickUpgrade.multiplier[0] += clickUpgrade.multiplier[1]
+//         drawWings()
+//     })
+// }
 
 
 
@@ -159,22 +167,8 @@ function drawJoey() {
     statsElem.innerText = `${joey.quantity} | ${joey.name} | ${joey.price}🍗`
 }
 
-function clickUpgradeCount(upgradeName) {
+function clickUpgradeCount() {
 
-    const upgradeCount = clickUpgrades.find(clickUpgrade => clickUpgrade.name == upgradeName)
-    if (upgradeCount)
-
-
-
-    // // clickUpgrades.forEach(clickUpgrade => {
-    // //     const clickUpgradeCount = clickUpgrade.find(clickUpgrade => clickUpgrade.name == upgradeName)
-    // //     const multiplierTotal = clickUpgrade.multiplier * clickUpgrade.quantity
-    // //     clickUpgradeCount.multiplier += multiplierTotal
-    // //     const statsElem = multiplierTotal.querySelector('.clickUpgrades')
-    // //     statsElem.innerText = `${clickUpgrade.multiplier}`
-    // //     // clickUpgrade.multiplier += clickUpgrade.quantity
-    // //     drawWings()
-    // })
 }
 
 // clickUpgradeCount()
