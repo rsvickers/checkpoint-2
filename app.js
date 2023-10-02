@@ -138,7 +138,7 @@ function drawRanch() {
     let statsElem = ranchElem.querySelector('.clickStats')
 
     let ranch = clickUpgrades.find(clickUpgrade => clickUpgrade.name == 'Ranch')
-    statsElem.innerText = `${ranch.quantity} | ${ranch.name} | ${ranch.price}🍗`
+    statsElem.innerText = `Qty: ${ranch.quantity} | ${ranch.name} | Price: ${ranch.price}🍗`
 
 
 }
@@ -148,7 +148,7 @@ function drawWater() {
     const statsElem = waterElem.querySelector('.clickStats')
 
     const water = clickUpgrades.find(clickUpgrade => clickUpgrade.name == 'Water')
-    statsElem.innerText = `${water.quantity} | ${water.name} | ${water.price}🍗`
+    statsElem.innerText = `Qty: ${water.quantity} | ${water.name} |Price: ${water.price}🍗`
 }
 
 function drawFriend() {
@@ -156,7 +156,7 @@ function drawFriend() {
     const statsElem = friendElem.querySelector('.autoStats')
 
     const friend = automaticUpgrades.find(autoUpgrade => autoUpgrade.name == 'Friend')
-    statsElem.innerText = `${friend.quantity} | ${friend.name} | ${friend.price}🍗`
+    statsElem.innerText = `Qty: ${friend.quantity} | ${friend.name} |Price: ${friend.price}🍗`
 }
 
 function drawJoey() {
@@ -164,7 +164,7 @@ function drawJoey() {
     const statsElem = joeyElem.querySelector('.autoStats')
 
     const joey = automaticUpgrades.find(autoUpgrade => autoUpgrade.name == 'Joey Chestnut')
-    statsElem.innerText = `${joey.quantity} | ${joey.name} | ${joey.price}🍗`
+    statsElem.innerText = `Qty: ${joey.quantity} | ${joey.name} |Price: ${joey.price}🍗`
 }
 
 function clickUpgradeCount() {
