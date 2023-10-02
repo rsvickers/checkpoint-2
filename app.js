@@ -61,13 +61,13 @@ function drawWings() {
 
 }
 // FIXME I need help with this.
-// function clickUpgradeCount() {
-//     clickUpgrades.forEach(clickUpgrade => {
-//         const clickUpgradeElem = document.getElementById('clickUpgrade')
-//         clickUpgradeElem.innerText = clickUpgrade.multiplier[0] += clickUpgrade.multiplier[1]
-//         drawWings()
-//     })
-// }
+function clickUpgradeCount() {
+    clickUpgrades.forEach(clickUpgrade => {
+        const clickUpgradeElem = document.getElementById('clickUpgrades')
+        clickUpgradeElem.innerText = clickUpgrade.multiplier[0] += clickUpgrade.multiplier[1]
+        drawWings()
+    })
+}
 
 
 
