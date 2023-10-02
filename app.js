@@ -60,16 +60,25 @@ function drawWings() {
     wingTotalElem.innerText = wings
 
 }
-// FIXME I need help with this.
+
 function clickUpgradeCount() {
+    let total = 0
     clickUpgrades.forEach(clickUpgrade => {
-        const clickUpgradeElem = document.getElementById('clickUpgrades')
-        clickUpgradeElem.innerText = clickUpgrade.multiplier[0] += clickUpgrade.multiplier[1]
-        drawWings()
+        // drawWings()
+        total += clickUpgrade.quantity * clickUpgrade.multiplier
     })
+    const clickUpgradeElem = document.getElementById('clickUpgrades')
+    clickUpgradeElem.innerText = total + 1
 }
 
-
+function autoUpgradeCount() {
+    let total = 0
+    automaticUpgrades.forEach(autoUpgrade => {
+        total += autoUpgrade.quantity * autoUpgrade.multiplier
+    })
+    const autoUpgradeElem = document.getElementById('automaticUpgrades')
+    autoUpgradeElem.innerText = total
+}
 
 
 function buyRanch() {
@@ -79,6 +88,7 @@ function buyRanch() {
         wings -= ranch.price
         drawWings()
         ranch.price *= 2
+        clickUpgradeCount()
         drawRanch()
         // drawRanchUpgrade()
     }
@@ -90,6 +100,7 @@ function buyWater() {
     if (wings >= water.price) {
         water.quantity++
         wings -= water.price
+        clickUpgradeCount()
         drawWings()
         water.price *= 2
         drawWater()
@@ -105,6 +116,7 @@ function buyAFriend() {
         wings -= friend.price
         drawWings()
         friend.price *= 2
+        autoUpgradeCount()
         drawFriend()
     }
 
@@ -117,6 +129,7 @@ function buyJoeyChestnut() {
         wings -= joey.price
         drawWings()
         joey.price *= 2
+        autoUpgradeCount()
         drawJoey()
     }
 }
@@ -167,9 +180,9 @@ function drawJoey() {
     statsElem.innerText = `Qty: ${joey.quantity} | ${joey.name} |Price: ${joey.price}🍗`
 }
 
-function clickUpgradeCount() {
+// function clickUpgradeCount() {
 
-}
+// }
 
 // clickUpgradeCount()
 setInterval(calculateAutoUpgrades, 3000);
